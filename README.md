@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- Installed node packages  -->
+
+stntax => npm install (package-name)
+
+package-name: -
+
+2.react-router-dom
+3.reactjs-pop
+4.framer-motion => some animation when the page open
+5.react-icons
+6.react-slick(carosual)
+
+https://preview.colorlib.com/theme/feliciano/index.html

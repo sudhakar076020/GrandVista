@@ -1,0 +1,115 @@
+.menu-section-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.food-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  max-width: 280px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image Section */
+.food-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.food-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.food-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #eee;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.food-badge.right {
+  left: auto;
+  right: 8px;
+  color: #fff;
+  background-color: #ff6600;
+}
+
+/* Name + Price Row */
+.food-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.food-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Description */
+.food-description {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Footer */
+.food-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-btn {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background: #e65c00;
+}
+
+.preparationTime-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.food-time {
+  font-size: 14px;
+  color: #555;
+}
