@@ -80,5 +80,6 @@ package-name: -
 4.framer-motion => some animation when the page open
 5.react-icons
 6.react-slick(carosual)
+7.react-datepicker (calender input type date)
 
 https://preview.colorlib.com/theme/feliciano/index.html

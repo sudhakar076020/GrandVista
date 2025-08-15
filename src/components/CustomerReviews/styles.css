@@ -1,0 +1,112 @@
+.customer-reviews-container {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #222;
+  position: relative;
+  margin-top: 25px;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #ff6600;
+  display: block;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.reviews-subtitle {
+  color: #ff6600;
+  font-size: 1.9rem;
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+/* Review Card */
+/* Make sure the slider actually has width and the slides are visible */
+.review-carousel {
+  max-width: 520px; /* give it a width */
+  margin: 0 auto; /* center it */
+  margin-top: 35px;
+}
+
+.review-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.review-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50px;
+}
+
+.review-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 100%;
+}
+
+/* Optional niceties */
+.review-role {
+  color: #777;
+  font-style: italic;
+}
+
+.review-text {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Sometimes slick needs these to avoid collapsed slides */
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
+.slick-slide > div {
+  width: 100%;
+}
+
+@media screen and (max-width: 620px) {
+  .reviews-subtitle {
+    width: 95%;
+  }
+  .review-carousel {
+    width: 90%;
+  }
+}
+
+/* All dots */
+.slick-dots li button:before {
+  color: #ccc !important; /* Default color */
+  opacity: 1 !important; /* Make them fully visible */
+}
+
+/* Active dot */
+.slick-dots li.slick-active button:before {
+  color: #ff5722 !important; /* Active dot color */
+  font-size: 11px !important;
+}

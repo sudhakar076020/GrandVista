@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import Navbar from "../Navbar";
 import OurFoodMenu from "../OurFoodMenu";
 import MenuCategoryTab from "../MenuCategoryTab";
+import TableReservation from "../TableReservation";
+import CustomerReviews from "../CustomerReviews";
 import FoodMenu from "../../context/menuContext";
 
 const servicesData = [
@@ -89,6 +91,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <Navbar />
+      {/* Home Banner Section */}
       <div className="banner-container">
         <div className="banner-content">
           <h1>Welcome to GrandVista</h1>
@@ -96,7 +99,7 @@ const Home = () => {
           <button type="button">BOOK A TABLE</button>
         </div>
       </div>
-      {/* our services card */}
+      {/* Our services card */}
       <section className="our-services">
         <div className="our-services-card">
           <h2 className="section-title">Our Services</h2>
@@ -118,7 +121,7 @@ const Home = () => {
           where every stay feels like home"
         </p>
       </div>
-      {/* multiply images */}
+      {/* Images gallery */}
       <div className="image-gallery">
         {images.map((src, index) => (
           <div key={index} className="image-card">
@@ -134,6 +137,10 @@ const Home = () => {
         </p>
       </div>
       {OurFoodMenuSection()}
+      {/* Table Reservation Form */}
+      <TableReservation />
+      {/* Customer Reviews Section */}
+      <CustomerReviews />
     </div>
   );
 };

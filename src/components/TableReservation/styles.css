@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Bebas+Neue&family=Castoro:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Barcode+39+Text&family=Orbitron:wght@900&family=Playwrite+VN+Guides&display=swap");
+
+.tableReservation-container {
+  background-color: #f8f9fa;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Form and image card */
+.form-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+  height: 560px;
+  height: auto;
+}
+
+.form-card-words {
+  height: 180px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservation-title {
+  font-size: 2.8rem;
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #ff6600;
+  text-align: center;
+}
+
+/* Table reservation Form */
+.form-container {
+  background-color: #ffffff;
+  width: 450px;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+/* Form input group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group label {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.input-card {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 45px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-card input,
+.input-card select {
+  height: 100%;
+  width: 90%;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 15px;
+  border-radius: 4px;
+}
+
+.input-card .reservation-icons {
+  width: 20px;
+  height: 20px;
+  color: #555;
+  margin-right: 15px;
+}
+
+/* Date and Time card */
+.date_time-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Custom Date input using npm date-picker */
+.custom-date-picker {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  border: 2px solid black;
+  cursor: pointer;
+  padding-left: 15px;
+  border-radius: 4px;
+}
+
+.input-card:hover {
+  border-color: #ff6600;
+}
+
+.input-card:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 5px (#ff6600);
+}
+
+/* Form submit button */
+.reservation-form-submit-btn {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f8f9fa;
+  background-color: #ff6600;
+  padding: 10px 15px;
+  margin-top: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+}
+
+.reservation-form-submit-btn:hover {
+  color: #ff6600;
+  border: 2px solid #ff6600;
+  background-color: #f8f9fa;
+}
+
+@media screen and (max-width: 620px) {
+  .form-container,
+  .form-card-words {
+    width: 95%;
+  }
+  .date_time-card {
+    gap: 12px;
+  }
+  .form-card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+}
