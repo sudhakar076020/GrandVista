@@ -5,9 +5,9 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
-  margin-bottom: 25px;
   width: 80%;
-  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 45px;
 }
 
 .food-card {

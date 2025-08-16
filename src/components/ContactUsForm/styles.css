@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Bebas+Neue&family=Castoro:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Barcode+39+Text&family=Orbitron:wght@900&family=Playwrite+VN+Guides&display=swap");
 
-.tableReservation-container {
+.contact-us-container {
   background-color: #f8f9fa;
   padding-top: 25px;
   padding-bottom: 25px;
@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
 }
 
 /* Form and image card */
@@ -19,26 +19,7 @@
   justify-content: space-around;
   align-items: center;
   width: 95%;
-  height: 560px;
-  height: auto;
-}
-
-.form-card-words {
-  height: 180px;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.reservation-title {
-  font-size: 2.8rem;
-  font-family: "Allura", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: #ff6600;
-  text-align: center;
+  height: 520px;
 }
 
 /* Table reservation Form */
@@ -56,12 +37,19 @@
   border-radius: 8px;
 }
 
+.contact-us-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+}
+
 /* Form input group */
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 2px;
+  gap: 5px;
 }
 
 .input-group label {
@@ -87,7 +75,7 @@
 }
 
 .input-card input,
-.input-card select {
+.contact-message {
   height: 100%;
   width: 90%;
   font-size: 16px;
@@ -98,11 +86,31 @@
   border-radius: 4px;
 }
 
-.input-card select {
-  cursor: pointer;
+.message-card {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 120px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.input-card .reservation-icons {
+.contact-message {
+  width: 100% !important;
+  height: 100% !important;
+  padding-top: 5px !important;
+}
+
+.profile-icons,
+.mail-icons,
+.phone-icons {
   width: 20px;
   height: 20px;
   color: #555;
@@ -142,7 +150,7 @@
 }
 
 /* Form submit button */
-.reservation-form-submit-btn {
+.contact-form-send-btn {
   border: none;
   outline: none;
   font-size: 1rem;
@@ -157,7 +165,7 @@
   margin-top: 15px;
 }
 
-.reservation-form-submit-btn:hover {
+.contact-form-send-btn:hover {
   color: #ff6600;
   border: 2px solid #ff6600;
   background-color: #f8f9fa;
@@ -166,14 +174,6 @@
 @media screen and (max-width: 620px) {
   .form-container {
     width: 95%;
-    margin-top: 25px;
-  }
-  .form-card-words {
-    width: 95%;
-    margin-top: 45px;
-  }
-  .date_time-card {
-    gap: 12px;
   }
   .form-card {
     flex-direction: column;

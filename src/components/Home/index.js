@@ -2,10 +2,13 @@ import "./styles.css";
 import { v4 as uuidv4 } from "uuid";
 
 import Navbar from "../Navbar";
+import MasterChefs from "../MasterChef";
 import OurFoodMenu from "../OurFoodMenu";
 import MenuCategoryTab from "../MenuCategoryTab";
 import TableReservation from "../TableReservation";
 import CustomerReviews from "../CustomerReviews";
+import ContactUsForm from "../ContactUsForm";
+// Context
 import FoodMenu from "../../context/menuContext";
 
 const servicesData = [
@@ -136,11 +139,15 @@ const Home = () => {
           memorable."
         </p>
       </div>
+      <MasterChefs />
+      {/* Our Menu Section */}
       {OurFoodMenuSection()}
       {/* Table Reservation Form */}
       <TableReservation />
       {/* Customer Reviews Section */}
       <CustomerReviews />
+      {/* Contect Us */}
+      <ContactUsForm />
     </div>
   );
 };

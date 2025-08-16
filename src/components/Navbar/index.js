@@ -27,11 +27,11 @@ const Navbar = () => {
 
         <ul className="navbar-list">
           <li className="navbar-item">About</li>
-          <li className="navbar-item">Projects</li>
+          <li className="navbar-item">Menu</li>
           <li className="navbar-item">Contact</li>
           <li className="navbar-item">
             <button type="button" className="navbar-button">
-              Resume
+              BOOK A TABLE
             </button>
           </li>
         </ul>
@@ -82,7 +82,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                   >
-                    <li className="drawer-item">Projects</li>
+                    <li className="drawer-item">Menu</li>
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: 80 }}
@@ -98,7 +98,7 @@ const Navbar = () => {
                   >
                     <li className="drawer-item">
                       <button type="button" className="drawer-button">
-                        Resume
+                        BOOK A TABLE
                       </button>
                     </li>
                   </motion.div>
@@ -110,7 +110,7 @@ const Navbar = () => {
                     transition={{ duration: 0.8 }}
                   >
                     <div className="drawer-footer-line"></div>
-                    <p>© 2025 My Portfolio | Sudhakar</p>
+                    <p>© 2025 GrandVista by Sudhakar</p>
                   </motion.div>
                 </div>
               </div>

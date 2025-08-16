@@ -454,7 +454,6 @@ class App extends Component {
       >
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/about" element={<About />} /> */}
         </Routes>
       </FoodMenu.Provider>
     );
