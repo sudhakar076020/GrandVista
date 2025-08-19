@@ -8,6 +8,7 @@ import MenuCategoryTab from "../MenuCategoryTab";
 import TableReservation from "../TableReservation";
 import CustomerReviews from "../CustomerReviews";
 import ContactUsForm from "../ContactUsForm";
+import Blogs from "../Blogs";
 // Context
 import FoodMenu from "../../context/menuContext";
 
@@ -148,6 +149,8 @@ const Home = () => {
       <CustomerReviews />
       {/* Contect Us */}
       <ContactUsForm />
+      {/* Blogs Section */}
+      <Blogs />
     </div>
   );
 };

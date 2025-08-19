@@ -81,5 +81,7 @@ package-name: -
 5.react-icons
 6.react-slick(carosual)
 7.react-datepicker (calender input type date)
+8. date-fns (format method to format the date)
+9. react-player 
 
 https://preview.colorlib.com/theme/feliciano/index.html
