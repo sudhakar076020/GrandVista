@@ -5,10 +5,10 @@ import Navbar from "../Navbar";
 import MasterChefs from "../MasterChef";
 import OurFoodMenu from "../OurFoodMenu";
 import MenuCategoryTab from "../MenuCategoryTab";
-import TableReservation from "../TableReservation";
 import CustomerReviews from "../CustomerReviews";
-import ContactUsForm from "../ContactUsForm";
 import Blogs from "../Blogs";
+import Footer from "../Footer";
+
 // Context
 import FoodMenu from "../../context/menuContext";
 
@@ -74,7 +74,7 @@ const Home = () => {
         {(value) => {
           const { activeCategoryTab } = value;
           return (
-            <div className="our-menu-section">
+            <div className="our-menu-section" id="menu">
               <h1 className="section-title">Our Menu</h1>
               <ul className="foodMenu-category-container">
                 {foodMenuTabList.map((category) => (
@@ -93,7 +93,7 @@ const Home = () => {
     );
   };
   return (
-    <div className="home-container">
+    <div className="home-container" id="home">
       <Navbar />
       {/* Home Banner Section */}
       <div className="banner-container">
@@ -103,6 +103,7 @@ const Home = () => {
           <button type="button">BOOK A TABLE</button>
         </div>
       </div>
+
       {/* Our services card */}
       <section className="our-services">
         <div className="our-services-card">
@@ -143,14 +144,12 @@ const Home = () => {
       <MasterChefs />
       {/* Our Menu Section */}
       {OurFoodMenuSection()}
-      {/* Table Reservation Form */}
-      <TableReservation />
       {/* Customer Reviews Section */}
       <CustomerReviews />
-      {/* Contect Us */}
-      <ContactUsForm />
       {/* Blogs Section */}
       <Blogs />
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 };

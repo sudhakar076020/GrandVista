@@ -83,5 +83,7 @@ package-name: -
 7.react-datepicker (calender input type date)
 8. date-fns (format method to format the date)
 9. react-player 
+10. react-scrool (Link) 
+11. react-parallax 
 
 https://preview.colorlib.com/theme/feliciano/index.html

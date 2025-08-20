@@ -2,7 +2,6 @@ import "./styles.css";
 
 import Swal from "sweetalert2"; // SweetAlert2
 
-
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser"; // Send Email using EmailJS
 
@@ -10,6 +9,9 @@ import emailjs from "@emailjs/browser"; // Send Email using EmailJS
 import { FaUser } from "react-icons/fa"; // User profile and userFriends
 import { MdEmail } from "react-icons/md"; //Email
 import { FaPhone } from "react-icons/fa6"; // Phone
+
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 const ContactUsForm = () => {
   const [contactFormData, setContactFormData] = useState({
@@ -65,81 +67,85 @@ const ContactUsForm = () => {
   };
 
   return (
-    <div className="contact-us-container">
-      <h1 className="section-title">Get in Touch</h1>
-      <div className="form-card">
-        {/* Contact Form */}
-        <div className="form-container">
-          <form className="contact-us-form" onSubmit={sendContactForm}>
-            {/* Input Name */}
-            <div className="input-group">
-              <label htmlFor="name">Name</label>
-              <div className="input-card">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  id="name"
-                  name="user_name"
-                  value={contactFormData.user_name}
-                  onChange={handleChange}
-                  required
-                />
-                <FaUser className="profile-icons" />
+    <>
+      <Navbar />
+      <div className="contact-us-container">
+        <h1 className="contact-heading">Get in Touch</h1>
+        <div className="form-card">
+          {/* Contact Form */}
+          <div className="form-container">
+            <form className="contact-us-form" onSubmit={sendContactForm}>
+              {/* Input Name */}
+              <div className="input-group">
+                <label htmlFor="name">Name</label>
+                <div className="input-card">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    id="name"
+                    name="user_name"
+                    value={contactFormData.user_name}
+                    onChange={handleChange}
+                    required
+                  />
+                  <FaUser className="profile-icons" />
+                </div>
               </div>
-            </div>
-            {/* Input Email */}
-            <div className="input-group">
-              <label htmlFor="email">Email</label>
-              <div className="input-card">
-                <input
-                  type="mail"
-                  placeholder="Email"
-                  id="email"
-                  name="user_email"
-                  value={contactFormData.user_email}
-                  onChange={handleChange}
-                  required
-                />
-                <MdEmail className="mail-icons" />
+              {/* Input Email */}
+              <div className="input-group">
+                <label htmlFor="email">Email</label>
+                <div className="input-card">
+                  <input
+                    type="mail"
+                    placeholder="Email"
+                    id="email"
+                    name="user_email"
+                    value={contactFormData.user_email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <MdEmail className="mail-icons" />
+                </div>
               </div>
-            </div>
-            {/* Input Phone Number */}
-            <div className="input-group">
-              <label htmlFor="phone">Phone</label>
-              <div className="input-card">
-                <input
-                  id="phone"
-                  type="tel"
-                  placeholder="Phone No"
-                  pattern="[0-9]{10}"
-                  name="phone"
-                  value={contactFormData.phone}
-                  onChange={handleChange}
-                  required
-                />
-                <FaPhone className="phone-icons" />
+              {/* Input Phone Number */}
+              <div className="input-group">
+                <label htmlFor="phone">Phone</label>
+                <div className="input-card">
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="Phone No"
+                    pattern="[0-9]{10}"
+                    name="phone"
+                    value={contactFormData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                  <FaPhone className="phone-icons" />
+                </div>
               </div>
-            </div>
-            {/* Contact details Textarea */}
-            <div className="input-group">
-              <label htmlFor="message">Message</label>
-              <div className="message-card">
-                <textarea
-                  className="contact-message"
-                  value={contactFormData.message}
-                  name="message"
-                  onChange={handleChange}
-                  placeholder="Message"
-                ></textarea>
+              {/* Contact details Textarea */}
+              <div className="input-group">
+                <label htmlFor="message">Message</label>
+                <div className="message-card">
+                  <textarea
+                    className="contact-message"
+                    value={contactFormData.message}
+                    name="message"
+                    onChange={handleChange}
+                    placeholder="Message"
+                  ></textarea>
+                </div>
               </div>
-            </div>
-            <button type="submit" className="contact-form-send-btn">
-              Send
-            </button>
-          </form>
+              <button type="submit" className="contact-form-send-btn">
+                Send
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

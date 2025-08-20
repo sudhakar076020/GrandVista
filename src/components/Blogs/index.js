@@ -1,8 +1,6 @@
 import "./styles.css";
-import { v4 as uuidv4 } from "uuid";
-import { format } from "date-fns";
-import Popup from "reactjs-popup";
-import ReactPlayer from "react-player";
+import { v4 as uuidv4 } from "uuid"; //Unique id
+import { format } from "date-fns"; // To convert the date formate Ex: June 7 2025
 
 const restaurantBlogVideos = [
   {
@@ -62,41 +60,9 @@ const Blogs = () => {
               </span>
               <h2 className="blog-title">{blog.title}</h2>
               <p className="blog-description">{blog.description}</p>
-
-              {/* popup Models */}
-              <Popup
-                trigger={
-                  <button type="button" className="blog-btn">
-                    Watch Now
-                  </button>
-                }
-                modal
-                nested
-              >
-                {(close) => (
-                  <div className="modal">
-                    <button
-                      className="close"
-                      onClick={() => {
-                        console.log("modal closed ");
-                        close();
-                      }}
-                    >
-                      &times;
-                    </button>
-                    <div className="content">
-                      <ReactPlayer
-                        src="https://youtu.be/nb_fFj_0rq8?si=Cij59PgfV4ONNGBc"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                        }}
-                        controls
-                      />
-                    </div>
-                  </div>
-                )}
-              </Popup>
+              <button type="button" className="blog-btn">
+                Watch Now
+              </button>
             </div>
           </li>
         ))}

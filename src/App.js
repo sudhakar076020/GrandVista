@@ -8,6 +8,9 @@ import { Routes, Route } from "react-router-dom";
 
 // Components
 import Home from "./components/Home";
+import About from "./components/About";
+import TableReservation from "./components/TableReservation";
+import ContactUsForm from "./components/ContactUsForm";
 
 // import About from './components/About';
 
@@ -453,7 +456,14 @@ class App extends Component {
         }}
       >
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route
+            exact
+            path="/tableReservation"
+            element={<TableReservation />}
+          />
+          <Route exact path="/contact" element={<ContactUsForm />} />
         </Routes>
       </FoodMenu.Provider>
     );

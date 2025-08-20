@@ -12,6 +12,7 @@
   align-items: stretch;
 }
 
+
 .banner-container {
   display: flex;
   flex-direction: column;
@@ -47,7 +48,7 @@
 }
 
 .banner-content button {
-  color: #333;
+  color: #e5e4e2;
   font-size: 1rem;
   font-weight: 600;
   border: 2px solid #fff;

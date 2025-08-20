@@ -13,6 +13,9 @@ import { MdEmail } from "react-icons/md"; //Email
 import { BsCalendarDateFill } from "react-icons/bs"; // Date
 import { FaPhone, FaClock } from "react-icons/fa6"; // Phone & Clock
 
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+
 // Reservation table Time
 const reservationTimeSlots = [
   { id: "9:00 AM", timeDisplayText: "9:00 AM" },
@@ -41,101 +44,105 @@ const TableReservation = () => {
   };
 
   return (
-    <div className="tableReservation-container">
-      <h1 className="section-title">Table Reservation</h1>
-      <div className="form-card">
-        <div className="form-card-words">
-          <h1 className="reservation-title">
-            "Your special moments, our special table."
-          </h1>
-        </div>
-        {/*Table Reservation  Form */}
-        <div className="form-container">
-          <form
-            className="tableReservation-form"
-            onSubmit={tableReservationFormSubmit}
-          >
-            {/* Input Name */}
-            <div className="input-group">
-              <label htmlFor="name">Name</label>
-              <div className="input-card">
-                <input type="text" placeholder="Name" id="name" required />
-                <FaUser className="reservation-icons" />
-              </div>
-            </div>
-            {/* Input Email */}
-            <div className="input-group">
-              <label htmlFor="email">Email</label>
-              <div className="input-card">
-                <input type="mail" placeholder="Email" id="email" required />
-                <MdEmail className="reservation-icons" />
-              </div>
-            </div>
-            {/* Input Phone Number */}
-            <div className="input-group">
-              <label htmlFor="phone">Phone</label>
-              <div className="input-card">
-                <input
-                  id="phone"
-                  type="tel"
-                  placeholder="Phone No"
-                  pattern="[0-9]{10}"
-                  required
-                />
-                <FaPhone className="reservation-icons" />
-              </div>
-            </div>
-            {/* Input Number of Persons */}
-            <div className="input-group">
-              <label htmlFor="person">No. of Persons</label>
-              <div className="input-card">
-                <input
-                  id="person"
-                  type="number"
-                  placeholder="No. of Persons"
-                  required
-                />
-                <FaUserFriends className="reservation-icons" />
-              </div>
-            </div>
-            {/* Date and Time Input Group */}
-            <div className="date_time-card">
-              {/*  Date  */}
+    <>
+      <Navbar />
+      <div className="tableReservation-container">
+        <h1 className="reservation-heading">Table Reservation</h1>
+        <div className="form-card">
+          <div className="form-card-words">
+            <h1 className="reservation-title">
+              "Your special moments, our special table."
+            </h1>
+          </div>
+          {/*Table Reservation  Form */}
+          <div className="form-container">
+            <form
+              className="tableReservation-form"
+              onSubmit={tableReservationFormSubmit}
+            >
+              {/* Input Name */}
               <div className="input-group">
-                <label htmlFor="date">Date</label>
+                <label htmlFor="name">Name</label>
                 <div className="input-card">
-                  <DatePicker
-                    id="date"
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    dateFormat="dd/MM/yyyy"
-                    placeholderText="Select date"
-                    className="custom-date-picker"
+                  <input type="text" placeholder="Name" id="name" required />
+                  <FaUser className="reservation-icons" />
+                </div>
+              </div>
+              {/* Input Email */}
+              <div className="input-group">
+                <label htmlFor="email">Email</label>
+                <div className="input-card">
+                  <input type="mail" placeholder="Email" id="email" required />
+                  <MdEmail className="reservation-icons" />
+                </div>
+              </div>
+              {/* Input Phone Number */}
+              <div className="input-group">
+                <label htmlFor="phone">Phone</label>
+                <div className="input-card">
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="Phone No"
+                    pattern="[0-9]{10}"
                     required
                   />
-                  <BsCalendarDateFill className="reservation-icons" />
+                  <FaPhone className="reservation-icons" />
                 </div>
               </div>
-              {/* Input Time */}
+              {/* Input Number of Persons */}
               <div className="input-group">
-                <label htmlFor="time">Time</label>
+                <label htmlFor="person">No. of Persons</label>
                 <div className="input-card">
-                  <select id="time" required>
-                    {reservationTimeSlots.map((time) => (
-                      <option key={time.id}>{time.timeDisplayText}</option>
-                    ))}
-                  </select>
-                  <FaClock className="reservation-icons" />
+                  <input
+                    id="person"
+                    type="number"
+                    placeholder="No. of Persons"
+                    required
+                  />
+                  <FaUserFriends className="reservation-icons" />
                 </div>
               </div>
-            </div>
-            <button type="submit" className="reservation-form-submit-btn">
-              Submit
-            </button>
-          </form>
+              {/* Date and Time Input Group */}
+              <div className="date_time-card">
+                {/*  Date  */}
+                <div className="input-group">
+                  <label htmlFor="date">Date</label>
+                  <div className="input-card">
+                    <DatePicker
+                      id="date"
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                      dateFormat="dd/MM/yyyy"
+                      placeholderText="Select date"
+                      className="custom-date-picker"
+                      required
+                    />
+                    <BsCalendarDateFill className="reservation-icons" />
+                  </div>
+                </div>
+                {/* Input Time */}
+                <div className="input-group">
+                  <label htmlFor="time">Time</label>
+                  <div className="input-card">
+                    <select id="time" required>
+                      {reservationTimeSlots.map((time) => (
+                        <option key={time.id}>{time.timeDisplayText}</option>
+                      ))}
+                    </select>
+                    <FaClock className="reservation-icons" />
+                  </div>
+                </div>
+              </div>
+              <button type="submit" className="reservation-form-submit-btn">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

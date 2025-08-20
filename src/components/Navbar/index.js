@@ -1,13 +1,35 @@
+import { useState } from "react";
+
 import "./index.css";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion"; // Importing framer-motion for animations
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 
+const NavLinkList = [
+  { id: "HOME", linkName: "Home", routePathName: "/", delayTime: 0.2 },
+  { id: "MENU", linkName: "Menu", routePathName: "/menu", delayTime: 0.4 },
+  { id: "ABOUT", linkName: "About", routePathName: "/about", delayTime: 0.6 },
+  {
+    id: "CONTACT",
+    linkName: "Contact",
+    routePathName: "/contact",
+    delayTime: 0.8,
+  },
+  {
+    id: "BOOKTABLE",
+    linkName: "Book Table",
+    routePathName: "/tableReservation",
+    delayTime: 1.0,
+  },
+];
+
 const Navbar = () => {
+  const [active, setActive] = useState(NavLinkList[0].id);
   return (
     <motion.div
       initial={{ opacity: 0, y: -10 }}
@@ -24,16 +46,18 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop menu */}
-
         <ul className="navbar-list">
-          <li className="navbar-item">About</li>
-          <li className="navbar-item">Menu</li>
-          <li className="navbar-item">Contact</li>
-          <li className="navbar-item">
-            <button type="button" className="navbar-button">
-              BOOK A TABLE
-            </button>
-          </li>
+          {NavLinkList.map((link) => (
+            <Link to={link.routePathName}>
+              <li
+                key={link.id}
+                className={`nav-item ${active === "home" ? "active" : ""}`}
+                onClick={() => setActive(link.id)}
+              >
+                {link.linkName}
+              </li>
+            </Link>
+          ))}
         </ul>
 
         {/* Small device menu */}
@@ -69,45 +93,23 @@ const Navbar = () => {
                   <IoCloseOutline className="close-icon" />
                 </button>
                 <ul className="drawer-menu-list">
-                  <motion.div
-                    initial={{ opacity: 0, x: 80 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                  >
-                    <li className="drawer-item">About</li>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, x: 80 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                  >
-                    <li className="drawer-item">Menu</li>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: 80 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                  >
-                    <li className="drawer-item">Contact</li>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: 80 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                  >
-                    <li className="drawer-item">
-                      <button type="button" className="drawer-button">
-                        BOOK A TABLE
-                      </button>
-                    </li>
-                  </motion.div>
+                  {NavLinkList.map((link) => (
+                    <motion.div
+                      initial={{ opacity: 0, x: 80 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: link.delayTime }}
+                    >
+                      <Link to={link.routePathName} onClick={close}>
+                        <li className="drawer-item">{link.linkName}</li>
+                      </Link>
+                    </motion.div>
+                  ))}
                 </ul>
                 <div className="drawer-footer">
                   <motion.div
                     initial={{ opacity: 0, y: 80 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 1.2 }}
                   >
                     <div className="drawer-footer-line"></div>
                     <p>© 2025 GrandVista by Sudhakar</p>

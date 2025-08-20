@@ -128,7 +128,7 @@ const MasterChefs = () => {
   };
 
   return (
-    <div className="masterChef-container">
+    <div className="masterChef-container" id="ourChef">
       <h1 className="section-title">Our Master Chef's</h1>
       <p className="master-chefs-subtitle">
         “Meet the Artists Behind the Flavors”
