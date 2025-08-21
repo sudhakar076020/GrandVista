@@ -1,5 +1,6 @@
 import "./styles.css";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom"; //Navigate = hook to send the user to another route when called.
 
 import Navbar from "../Navbar";
 import MasterChefs from "../MasterChef";
@@ -68,6 +69,9 @@ const images = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  
   const OurFoodMenuSection = () => {
     return (
       <FoodMenu.Consumer>
@@ -92,6 +96,10 @@ const Home = () => {
       </FoodMenu.Consumer>
     );
   };
+
+  const handleReserveTable = () => {
+    navigate("/tableReservation");
+  };
   return (
     <div className="home-container" id="home">
       <Navbar />
@@ -100,7 +108,9 @@ const Home = () => {
         <div className="banner-content">
           <h1>Welcome to GrandVista</h1>
           <p>Your Gateway to Fine Dining Experiences </p>
-          <button type="button">BOOK A TABLE</button>
+          <button type="button" onClick={handleReserveTable}>
+            BOOK A TABLE
+          </button>
         </div>
       </div>
 

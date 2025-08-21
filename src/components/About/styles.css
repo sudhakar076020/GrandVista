@@ -1,19 +1,38 @@
+.parallax-box {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.parallax-banner-box {
+  padding-top: 10vh;
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .about-section {
-  padding: 2rem;
+  padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.about-title {
+/* All components after the navbar this hearder was there the styles was in only in about component to share all components */
+.section-header-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #222;
+  color: #ffffff;
   position: relative;
   margin-top: 55px;
   text-align: center;
 }
 
-.about-title::after {
+.section-header-title::after {
   content: "";
   width: 80px;
   height: 4px;
@@ -28,13 +47,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 1.5rem;
-}
-
-.parallax-box {
-  width: 100%;
-  height: 250px;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 /* Optional: different heights for images */
@@ -63,6 +75,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .parallax-banner-card {
+    margin-top: 10vh;
+  }
   .about-grid {
     grid-template-columns: 1fr;
   }

@@ -12,12 +12,22 @@ const images = [
   "https://plus.unsplash.com/premium_photo-1675604274302-665e7e65021e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJha2VyeXxlbnwwfHwwfHx8MA%3D%3D",
 ];
 
+// Component parallax banner image
+const parallaxBannerImage = "https://plus.unsplash.com/premium_photo-1687888327531-090715f28f74?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHJlc3RhdXJhbnQlMjBmb29kfGVufDB8MHwwfHx8MA%3D%3D"
 const About = () => {
   return (
-    <>
+    <div className="about-container">
       <Navbar />
+      <Parallax
+        bgImage={parallaxBannerImage}
+        strength={300}
+        className="parallax-banner-card"
+      >
+        <div className="parallax-banner-box">
+          <h2 className="section-header-title">About</h2>
+        </div>
+      </Parallax>
       <section className="about-section">
-        <h2 className="about-title">About</h2>
         <div className="about-grid">
           {/* Parallax Image 1 */}
           <Parallax bgImage={images[0]} strength={300}>
@@ -46,7 +56,7 @@ const About = () => {
         </div>
       </section>
       <Footer />
-    </>
+    </div>
   );
 };
 

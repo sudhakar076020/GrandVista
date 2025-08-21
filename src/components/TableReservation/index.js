@@ -2,6 +2,8 @@ import "./styles.css";
 
 import React, { useState } from "react";
 
+import { Parallax } from "react-parallax"; //Parallax effect image
+
 import DatePicker from "react-datepicker"; //Date-picker npm
 // CSS Modules, react-datepicker-cssmodules.css
 // import "react-datepicker/dist/react-datepicker-cssmodules.css";
@@ -16,7 +18,7 @@ import { FaPhone, FaClock } from "react-icons/fa6"; // Phone & Clock
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
-// Reservation table Time
+// Reservation table Time slots
 const reservationTimeSlots = [
   { id: "9:00 AM", timeDisplayText: "9:00 AM" },
   { id: "10:00 AM", timeDisplayText: "10:00 AM" },
@@ -35,6 +37,10 @@ const reservationTimeSlots = [
   { id: "11:00 PM", timeDisplayText: "11:00 PM" },
 ];
 
+// Component parallax banner image
+const parallaxBannerImage =
+  "https://res.cloudinary.com/dehz5pshe/image/upload/v1755237835/table_reservation_image_sm_tmiwuk.jpg";
+
 const TableReservation = () => {
   const [startDate, setStartDate] = useState(new Date());
 
@@ -46,8 +52,17 @@ const TableReservation = () => {
   return (
     <>
       <Navbar />
+      {/* Component Banner section */}
+      <Parallax
+        bgImage={parallaxBannerImage}
+        strength={300}
+        className="parallax-banner-card"
+      >
+        <div className="parallax-banner-box">
+          <h2 className="section-header-title">Table Reservation</h2>
+        </div>
+      </Parallax>
       <div className="tableReservation-container">
-        <h1 className="reservation-heading">Table Reservation</h1>
         <div className="form-card">
           <div className="form-card-words">
             <h1 className="reservation-title">

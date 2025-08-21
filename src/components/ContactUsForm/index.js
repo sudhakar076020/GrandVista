@@ -1,5 +1,6 @@
 import "./styles.css";
 
+import { Parallax } from "react-parallax"; // Parallax effect images
 import Swal from "sweetalert2"; // SweetAlert2
 
 import React, { useState } from "react";
@@ -12,6 +13,10 @@ import { FaPhone } from "react-icons/fa6"; // Phone
 
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+
+// Component parallax banner image
+const parallaxBannerImage =
+  "https://res.cloudinary.com/dehz5pshe/image/upload/v1755237835/table_reservation_image_sm_tmiwuk.jpg";
 
 const ContactUsForm = () => {
   const [contactFormData, setContactFormData] = useState({
@@ -69,8 +74,16 @@ const ContactUsForm = () => {
   return (
     <>
       <Navbar />
+      <Parallax
+        bgImage={parallaxBannerImage}
+        strength={300}
+        className="parallax-banner-card"
+      >
+        <div className="parallax-banner-box">
+          <h2 className="section-header-title">Get in Touch</h2>
+        </div>
+      </Parallax>
       <div className="contact-us-container">
-        <h1 className="contact-heading">Get in Touch</h1>
         <div className="form-card">
           {/* Contact Form */}
           <div className="form-container">

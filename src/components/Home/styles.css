@@ -78,10 +78,11 @@
 
 .our-services-card {
   text-align: center;
-
   width: 70%;
 }
 
+
+/* All component and sections heading in one component css styles all to share it */
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;

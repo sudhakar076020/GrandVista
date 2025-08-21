@@ -31,27 +31,27 @@ const NavLinkList = [
 const Navbar = () => {
   const [active, setActive] = useState(NavLinkList[0].id);
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.5 }}
-    >
-      <nav className="navbar-container">
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
-          <div className="navbar-logo">GrandVista.</div>
-        </motion.div>
+    <nav className="navbar-container">
+      <motion.div
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
+        <div className="navbar-logo">GrandVista.</div>
+      </motion.div>
 
-        {/* Desktop menu */}
+      {/* Desktop menu */}
+      <motion.div
+        initial={{ opacity: 0, x: 0 }}
+        animate={{ opacity: 1, x: -80 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
         <ul className="navbar-list">
           {NavLinkList.map((link) => (
             <Link to={link.routePathName}>
               <li
                 key={link.id}
-                className={`nav-item ${active === "home" ? "active" : ""}`}
+                className={`navbar-item ${active === link.id ? "active" : ""}`}
                 onClick={() => setActive(link.id)}
               >
                 {link.linkName}
@@ -59,68 +59,68 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
+      </motion.div>
 
-        {/* Small device menu */}
-        <div className="popup-wrapper">
-          <Popup
-            trigger={(open) => (
-              <motion.div
-                initial={{ opacity: 0, x: 80 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-              >
-                <button className="hamburger_close-button" type="button">
-                  {open ? (
-                    <IoCloseOutline className="close-icon" />
-                  ) : (
-                    <RxHamburgerMenu className="hamburger-icon" />
-                  )}
-                </button>
-              </motion.div>
-            )}
-            modal
-            closeOnDocumentClick
-            overlayStyle={{ background: "rgba(0, 0, 0, 0.6)" }}
-            contentStyle={{
-              padding: 0,
-              border: "none",
-              background: "transparent",
-            }}
-          >
-            {(close) => (
-              <div className="drawer-popup">
-                <button className="drawer-close-btn" onClick={close}>
+      {/* Small device menu */}
+      <div className="popup-wrapper">
+        <Popup
+          trigger={(open) => (
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
+              <button className="hamburger_close-button" type="button">
+                {open ? (
                   <IoCloseOutline className="close-icon" />
-                </button>
-                <ul className="drawer-menu-list">
-                  {NavLinkList.map((link) => (
-                    <motion.div
-                      initial={{ opacity: 0, x: 80 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: link.delayTime }}
-                    >
-                      <Link to={link.routePathName} onClick={close}>
-                        <li className="drawer-item">{link.linkName}</li>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </ul>
-                <div className="drawer-footer">
+                ) : (
+                  <RxHamburgerMenu className="hamburger-icon" />
+                )}
+              </button>
+            </motion.div>
+          )}
+          modal
+          closeOnDocumentClick
+          overlayStyle={{ background: "rgba(0, 0, 0, 0.6)" }}
+          contentStyle={{
+            padding: 0,
+            border: "none",
+            background: "transparent",
+          }}
+        >
+          {(close) => (
+            <div className="drawer-popup">
+              <button className="drawer-close-btn" onClick={close}>
+                <IoCloseOutline className="close-icon" />
+              </button>
+              <ul className="drawer-menu-list">
+                {NavLinkList.map((link) => (
                   <motion.div
-                    initial={{ opacity: 0, y: 80 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2 }}
+                    initial={{ opacity: 0, x: 80 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: link.delayTime }}
                   >
-                    <div className="drawer-footer-line"></div>
-                    <p>© 2025 GrandVista by Sudhakar</p>
+                    <Link to={link.routePathName} onClick={close}>
+                      <li className="drawer-item">{link.linkName}</li>
+                    </Link>
                   </motion.div>
-                </div>
+                ))}
+              </ul>
+              <div className="drawer-footer">
+                <motion.div
+                  initial={{ opacity: 0, y: 80 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2 }}
+                >
+                  <div className="drawer-footer-line"></div>
+                  <p>© 2025 GrandVista by Sudhakar</p>
+                </motion.div>
               </div>
-            )}
-          </Popup>
-        </div>
-      </nav>
-    </motion.div>
+            </div>
+          )}
+        </Popup>
+      </div>
+    </nav>
   );
 };
 
